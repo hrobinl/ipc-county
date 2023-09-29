@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Project 3 by Benny, Luis, Michelle, and Hannah</title>
+    <link rel="stylesheet" href="formatting.css">
+
+    <style>
+        .title-container {
+            text-align: center;
+        }
+    </style>
+
+    <!-- navigation bar styling -->
+        <style>
+            .navbar {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                background-color: #333;
+                overflow: hidden;
+                position: fixed;
+            width: 100%;
+            top: 0;
+            }
+            .navbar li {
+            float: left;
+        }
+        .navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar li a.active {
+            background-color: #4CAF50;
+        }
+    </style>
+
+    <!-- dropdown and map styling -->
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .dropdown {
+            margin-right: 20px;
+        }
+    </style>
+
+</head>
+
+<div>
+<ul class="navbar">
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#charts">Charts</a></li>
+    <li><a href="#about">About</a></li>
+</ul>
+</div>
+
+<body>
+
+<div class="title-container">
+    <h1>Welcome to Project 3</h1>
+    <h2>Examining Population, Employment, and Education by county in the United States</h2>
+</div>
+
+<div class="container">
+    <div class="dropdown">
+    </div>
+
+    <div id="map"></div>
+</div>
+
+</body>
+
+<!-- scripts for javascript portion: -->
+<!-- <script src="./source.js"></script> -->
+
+</html>
