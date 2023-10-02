@@ -48,7 +48,7 @@ const plotData = async (category = 'Unemployed_2020') => {
     const minValue = Math.min(...valuesArray);
 
 
-    const plot = Plot.plot({
+    const plotMap = Plot.plot({
         projection: "albers-usa",
         marks: [
             Plot.geo(counties, { 
@@ -67,9 +67,32 @@ const plotData = async (category = 'Unemployed_2020') => {
         }
     })
 
-    const div = document.querySelector("#myplot");
-    div.innerHTML = ''
-    div.append(addTooltips(plot));
+    const mapDiv = document.querySelector("#map-plot");
+    mapDiv.innerHTML = ''
+    mapDiv.append(addTooltips(plotMap));
+
+    // const plotBar = Plot.plot({
+    //     projection: "albers-usa",
+    //     marks: [
+    //         Plot.geo(counties, { 
+    //             fill: (d) => countyDataMap.get(`${Number(d.id)}`),
+    //             title: (d) => `${d.properties.name} County \n ${countyDataMap.get(`${Number(d.id)}`)} ${category.split('_')[0]}`
+    //         }),
+    //         Plot.geo(states, {stroke: "#fff", strokeWidth: 0.5})
+    //     ],
+    //     color: {
+    //         scheme: "pubugn",
+    //         unknown: "#ddd",
+    //         type: "linear",
+    //         legend: true,
+    //         percent: true,
+    //         domain: [minValue, maxValue]
+    //     }
+    // })
+
+    // const barDiv = document.querySelector("#bar-plot");
+    // barDiv.innerHTML = ''
+    // barDiv.append(addTooltips(plotBar));
 }
 
 await plotData()
