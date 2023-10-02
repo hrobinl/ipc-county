@@ -67,7 +67,7 @@ const plotData = async (category = 'Unemployed_2020') => {
         }
     })
 
-    const mapDiv = document.querySelector("#map-plot");
+    const mapDiv = document.querySelector("#map");
     mapDiv.innerHTML = ''
     mapDiv.append(addTooltips(plotMap));
 
