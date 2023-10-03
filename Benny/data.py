@@ -2,7 +2,7 @@ from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
-engine = create_engine('sqlite:///C:\\Users\\benny\\Github\\ipc-county\\Benny\\project3.sqlite')
+engine = create_engine('sqlite:///C:\\Users\\justi\\OneDrive\\Desktop\\Data Analysis Boot Camp\\Projects\\Project 3\\ipc-county\\Benny\\project3.sqlite')
 Base = declarative_base()
 
 class CountyData(Base):

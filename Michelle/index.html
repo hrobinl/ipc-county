@@ -14,54 +14,6 @@
     <script src="../Benny/d3.js"></script>
     <script src="../Benny/plot.js"></script>
 
-    <!-- styling section -->
-    <style>
-        .title-container {
-            text-align: center;
-        }
-    </style>
-
-    <!-- navigation bar styling -->
-        <style>
-            .navbar {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                background-color: #333;
-                overflow: hidden;
-                position: fixed;
-            width: 100%;
-            top: 0;
-            }
-            .navbar li {
-            float: left;
-        }
-        .navbar li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-        .navbar li a.active {
-            background-color: #4CAF50;
-        }
-    </style>
-
-    <!-- dropdown and map styling -->
-    <style>
-        .container {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            height: 25%;
-        }
-        .dropdown {
-            margin-right: 20px;
-        }
-    </style>
-
 </head>
 
 <body>
@@ -72,14 +24,16 @@
     <li><a href="about.html">About</a></li>
 </ul>
 </div>
-
+<!-- title section -->
 <div class="title-container">
     <h1>Welcome to Project 3</h1>
     <h2>Examining Population, Employment, and Education by county in the United States</h2>
 </div>
 
-<div id="map"> <h1> map goes here</h1></div>
+<!-- map section -->
+<div class="map-container" id="map"></div>
 
+<!-- dropdown section -->
 <div class="container">
     <div class="dropdown">
         <select id="selCategory">
@@ -102,14 +56,12 @@
     </div>
 </div>
 
-<div id="bar"><h1> bar goes here</h1></div>
-</div>
-
-<div id="scatter"><h1> scatter goes here</h1></div>
+<!-- bar and scatter plot section -->
+<div class="new-container">
+    <div id="bar"><h1> bar goes here</h1></div>
+    <div id="scatter"><h1> scatter goes here</h1></div>
 </div>
 
 </body>
-
-
 
 </html>
