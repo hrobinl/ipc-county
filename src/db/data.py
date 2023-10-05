@@ -1,5 +1,5 @@
 import random
-from sqlalchemy import create_engine, Column, Integer, String, desc, not_
+from sqlalchemy import create_engine, Column, Integer, String, desc, not_, func, Float
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.sql import func
@@ -17,31 +17,31 @@ class CountyData(Base):
     FIPS_Code = Column(Integer)
     States = Column(String)
     Area_Name = Column(String)
-    laborforce_2020 = Column(Integer)
-    Employed_2020 = Column(Integer)
-    Unemployed_2020 = Column(Integer)
-    Unemployment_rate_2020 = Column(Integer)
-    laborforce_2021 = Column(Integer)
-    Employed_2021 = Column(Integer)
-    Unemployed_2021 = Column(Integer)
-    Unemployment_rate_2021 = Column(Integer)
-    laborforce_2022 = Column(Integer)
-    Employed_2022 = Column(Integer)
-    Unemployed_2022 = Column(Integer)
-    Unemployment_rate_2022 = Column(Integer)
-    POP_2020 = Column(Integer)
-    POP_2021 = Column(Integer)
-    POP_2022 = Column(Integer)
-    BIRTHS_2020 = Column(Integer)
-    BIRTHS_2021 = Column(Integer)
-    BIRTHS_2022 = Column(Integer)
-    DEATHS_2020 = Column(Integer)
-    DEATHS_2021 = Column(Integer)
-    DEATHS_2022 = Column(Integer)
-    NoHSB = Column(Integer)
-    HSB = Column(Integer)
-    CAD = Column(Integer)
-    BD = Column(Integer)
+    laborforce_2020 = Column(Float)
+    Employed_2020 = Column(Float)
+    Unemployed_2020 = Column(Float)
+    Unemployment_rate_2020 = Column(Float)
+    laborforce_2021 = Column(Float)
+    Employed_2021 = Column(Float)
+    Unemployed_2021 = Column(Float)
+    Unemployment_rate_2021 = Column(Float)
+    laborforce_2022 = Column(Float)
+    Employed_2022 = Column(Float)
+    Unemployed_2022 = Column(Float)
+    Unemployment_rate_2022 = Column(Float)
+    POP_2020 = Column(Float)
+    POP_2021 = Column(Float)
+    POP_2022 = Column(Float)
+    BIRTHS_2020 = Column(Float)
+    BIRTHS_2021 = Column(Float)
+    BIRTHS_2022 = Column(Float)
+    DEATHS_2020 = Column(Float)
+    DEATHS_2021 = Column(Float)
+    DEATHS_2022 = Column(Float)
+    NoHSB = Column(Float)
+    HSB = Column(Float)
+    CAD = Column(Float)
+    BD = Column(Float)
 
 
 
@@ -96,7 +96,7 @@ def get_scatter_data(sqlVar):
     compare = getattr(CountyData, f'Unemployment_rate_{year}')
     pop = getattr(CountyData, f'POP_{year}')
 
-    results = session.query(CountyData.FIPS_Code, CountyData.States, compare, pop/column).filter(not_(CountyData.FIPS_Code.like('%000')), CountyData.States.in_(selected_states)).all()
+    results = session.query(CountyData.FIPS_Code, CountyData.States, compare, func.round((column / pop)*100, 2)).filter(not_(CountyData.FIPS_Code.like('%000')), CountyData.States.in_(selected_states)).all()
     county_data_scatter = {code: (states, compare, per) for code, states, compare, per in results}
     session.close()
 

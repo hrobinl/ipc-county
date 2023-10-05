@@ -58,13 +58,12 @@ const plotData = async (category = 'Unemployed_2020') => {
         });
     }
 
-    console.log(countyData.scatter)
 
     for (const key in countyData.scatter) {
         if (countyData.scatter.hasOwnProperty(key)) {
 
             let scatObj = {
-                "States": countyData.scatter[key][0],
+                "County": countyData.scatter[key][0],
                 "Unemployment Rate": countyData.scatter[key][1],
             }
             scatObj[category] = countyData.scatter[key][2]
@@ -124,7 +123,13 @@ const plotData = async (category = 'Unemployed_2020') => {
     barDiv.innerHTML = ''
     barDiv.append(addTooltips(plotBar));
 
-    const plotScatter = Plot.dot(scatData, {x: category, y: 'Unemployment Rate', stroke: "States"}).plot()
+    const plotScatter = Plot.dot(scatData, {
+        x: category, 
+        y: 'Unemployment Rate', 
+        stroke: "County",
+        // channels: {state: "States", unemployment_rate: "Unemployment Rate", selection: category},
+        tip: true
+    }).plot()
 
     const scatDiv = document.querySelector("#scatter");
     scatDiv.innerHTML = ''
