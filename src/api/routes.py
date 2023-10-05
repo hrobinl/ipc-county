@@ -18,7 +18,7 @@ def home():
 # Render About Page
 @app.route("/about")
 def about():
-    print("Server received request for 'Charts' page...")
+    print("Server received request for 'About' page...")
     return render_template('about.html')
 
 # Map configuration endpoint
