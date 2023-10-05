@@ -10,7 +10,7 @@ CORS(app, support_credentials=True)
 
 
 # Render Homepage
-@app.route("/home")
+@app.route("/")
 def home():
     print("Server received request for 'Home' page...")
     return render_template('index.html')
