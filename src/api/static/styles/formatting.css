@@ -78,6 +78,11 @@ background-color: grey;
   align-items: flex-start;
 }
 
+
+.summary-container {
+  text-align: center;
+}
+
 #bar, #scatter {
   display: inline-block;
   width: 100%;

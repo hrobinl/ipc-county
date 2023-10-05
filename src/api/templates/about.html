@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Project 3 by Benny, Luis, Michelle, and Hannah</title>
-    <link rel="stylesheet" href="formatting.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/formatting.css') }}">
 
 </head>
 
@@ -12,8 +12,8 @@
     <!-- navigation bar code -->   
     <div>
         <ul class="navbar">
-            <li><a href="index.html">Home</a></li>
-            <li><a class="active" href="about.html">About</a></li>
+            <li><a href="home">Home</a></li>
+            <li><a class="active" href="about">About</a></li>
         </ul>
     </div>
     <!-- title section -->
