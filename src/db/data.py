@@ -100,6 +100,4 @@ def get_scatter_data(sqlVar):
     county_data_scatter = {code: (states, compare, per) for code, states, compare, per in results}
     session.close()
 
-    print(county_data_scatter)
-
     return county_data_scatter

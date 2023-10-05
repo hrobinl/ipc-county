@@ -30,8 +30,8 @@ def get_map_config():
     return jsonify(data)
 
 # Visualization data endpoint
-@app.route('/map', methods=['POST'])
-def map_data():
+@app.route('/visuals', methods=['POST'])
+def get_visual_data():
     data = request.get_json()
     sqlVar = data.get('data')
     map = get_map_data(sqlVar)
