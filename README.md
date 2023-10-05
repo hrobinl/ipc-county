@@ -11,7 +11,11 @@ The CSV file was then turned into a database using SQLite. Once the database was
 
 Once the data had been cleaned and the database created, we started planning our dynamic features and visualizations. We chose to do a map, bar chart, and scatter plot to show the data sets from different viewpoints. Our new library was Observable Plot. We created a hover function for the map, and a drop down that would change the data on the map, bar chart, and scatter plot depending on the category and year selected. 
 
-**image of maps, etc**
+![image](https://github.com/hrobinl/ipc-county/assets/132225207/9d69c821-7869-4c7b-aa6c-ed6c94a337c8)
+
+![image](https://github.com/hrobinl/ipc-county/assets/132225207/c5aca044-d45c-4d73-80b3-a379a873a65f)
+
+![image](https://github.com/hrobinl/ipc-county/assets/132225207/fdf3e2f3-3421-4aa0-ba08-6fdb732ec478)
 
 Once we knew the visualizations we wanted, we started creating HTML and CSS to support those items. In the HTML, we have the spaces (divs) created for the different visualizations (“map”, “bar”, “scatter”), as well as creating a navigation bar and the drop-down menu. We created a home page, which holds the visualizations, and an about page, which holds information about the project and our analysis. We used CSS to style the page by using different font weights, styles, and colors, as well as placement of the maps and charts on the page. 
  
